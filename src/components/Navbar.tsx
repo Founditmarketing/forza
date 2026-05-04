@@ -31,12 +31,19 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="group flex items-center space-x-2">
-          <motion.div 
+        <Link to="/" className="group flex items-center space-x-3">
+          <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-display font-extrabold tracking-[0.2em] text-white"
+            className="flex flex-col items-center"
           >
-            UFOR<span className="text-gold">ZA</span>
+            <img
+              src="/logo.png"
+              alt="Ultimate Forza Logo"
+              className="h-10 w-auto object-contain"
+            />
+            <span className="text-[10px] font-display font-extrabold tracking-[0.3em] text-white mt-1">
+              UFOR<span className="text-gold">ZA</span>
+            </span>
           </motion.div>
         </Link>
 
