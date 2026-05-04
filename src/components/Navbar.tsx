@@ -39,9 +39,9 @@ export default function Navbar() {
             <img
               src="/logo.png"
               alt="Ultimate Forza Logo"
-              className="h-10 w-auto object-contain"
+              className="h-16 w-auto object-contain"
             />
-            <span className="text-[10px] font-display font-extrabold tracking-[0.3em] text-white mt-1">
+            <span className="text-[11px] font-display font-extrabold tracking-[0.4em] text-white mt-1">
               UFOR<span className="text-gold">ZA</span>
             </span>
           </motion.div>
