@@ -1,6 +1,15 @@
 import { motion } from 'motion/react';
 import PageWrapper from '../components/PageWrapper';
+import PageSEO from '../components/PageSEO';
 import { Heart, Sparkles, Shield, Clock } from 'lucide-react';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'Uforza V-Essence',
+  description: 'Support for healthy circulation, hormonal balance, and sustained energy for the modern couple.',
+  brand: { '@type': 'Brand', name: 'Uforza' },
+};
 
 const vitalityPhotos = [
   '665840194_26421681950851279_6071779838331614705_n.jpeg',
@@ -14,6 +23,12 @@ const vitalityPhotos = [
 export default function Vitality() {
   return (
     <PageWrapper>
+      <PageSEO
+        title="Vitality: Home | Intimate Vitality & Circulation Support | Uforza"
+        description="Uforza Vitality supports healthy circulation, hormonal balance, and sustained energy for the modern couple. Discover Uforza V-Essence."
+        path="/vitality"
+        jsonLd={jsonLd}
+      />
       {/* Hero */}
       <section className="relative pt-40 pb-20 px-6">
         <div className="absolute top-0 left-0 w-full h-[70vh] z-0 overflow-hidden">
