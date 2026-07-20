@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -23,6 +24,7 @@ export default function App() {
           </main>
           <Footer />
         </div>
+        <Analytics />
       </Router>
     </HelmetProvider>
   );
