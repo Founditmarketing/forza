@@ -1,8 +1,25 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import PageWrapper from '../components/PageWrapper';
+import PageSEO, { SITE_URL } from '../components/PageSEO';
 import { ArrowRight, ShieldCheck, Zap, Heart, Play } from 'lucide-react';
 import { useState, useRef } from 'react';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Ultimate Forza',
+    url: `${SITE_URL}/`,
+    logo: `${SITE_URL}/logo.png`,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Ultimate Forza',
+    url: `${SITE_URL}/`,
+  },
+];
 
 const heroVideos = [
   'AQMEJaVdZwEaUkjWH2s2S0YSoVOQ2iz1QUvjrMEwqZg8cvEern_sdB9Am4wT3T41cGLls_J9pyHV4fHeq-QrBG5x4fKPqT4cIk1BPxF15j7b4A.mp4',
@@ -79,6 +96,12 @@ function VideoThumbnail({ src, index }: { src: string; index: number }) {
 export default function Home() {
   return (
     <PageWrapper>
+      <PageSEO
+        title="Ultimate Forza | Strength Power Knowledge Spirit"
+        description="Elite performance supplements for the two arenas that define a man: the gym and the home. Clinical-dosage formulas for physical dominance and intimate vitality."
+        path="/"
+        jsonLd={jsonLd}
+      />
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">

@@ -1,6 +1,24 @@
 import { motion } from 'motion/react';
 import PageWrapper from '../components/PageWrapper';
+import PageSEO from '../components/PageSEO';
 import { Activity, Zap, TrendingUp, RefreshCw } from 'lucide-react';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Uforza Pre-Arena',
+    description: 'Advanced neurological activation and vasodilation for unmatched intensity.',
+    brand: { '@type': 'Brand', name: 'Uforza' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Uforza Anabolic Recovery',
+    description: 'Strategic protein synthesis optimization for the elite recovery phase.',
+    brand: { '@type': 'Brand', name: 'Uforza' },
+  },
+];
 
 const gymPhotos = [
   '663965151_26422139604138847_1385681584204281991_n.jpg',
@@ -47,6 +65,12 @@ export default function Gym() {
 
   return (
     <PageWrapper>
+      <PageSEO
+        title="Gym: Power | Pre-Workout & Recovery Supplements | Uforza"
+        description="Clinically dosed pre-workout and recovery supplements engineered for explosive power, neural activation, and rapid recovery. Discover Uforza Pre-Arena and Anabolic Recovery."
+        path="/gym"
+        jsonLd={jsonLd}
+      />
       {/* Hero */}
       <section className="relative pt-40 pb-20 px-6">
         <div className="absolute top-0 left-0 w-full h-[60vh] z-0 overflow-hidden">
