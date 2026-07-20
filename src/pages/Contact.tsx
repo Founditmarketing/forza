@@ -1,9 +1,17 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import PageWrapper from '../components/PageWrapper';
+import PageSEO, { SITE_URL } from '../components/PageSEO';
 import { Mail, Shield, User, CheckCircle, AlertCircle, Loader } from 'lucide-react';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact Ultimate Forza',
+  url: `${SITE_URL}/contact`,
+};
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -42,6 +50,12 @@ export default function Contact() {
 
   return (
     <PageWrapper>
+      <PageSEO
+        title="Contact & Join the Elite Circle | Uforza"
+        description="Connect with Uforza advisors or join the Inner Circle for exclusive access to elite performance and vitality solutions."
+        path="/contact"
+        jsonLd={jsonLd}
+      />
       <section className="relative pt-48 pb-32 px-6 overflow-hidden">
         {/* Background Accents */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
